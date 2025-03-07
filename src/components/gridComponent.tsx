@@ -2,7 +2,17 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-const GridComponent = ({ data }) => {
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+interface GridComponentProps {
+  data: User[]; // Accepts an array of User objects
+}
+
+const GridComponent: React.FC<GridComponentProps> = ({ data }) => {
   return (
     <Grid container spacing={2}>
       {data.map((item) => (
